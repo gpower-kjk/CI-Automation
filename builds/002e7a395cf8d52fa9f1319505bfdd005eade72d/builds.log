@@ -1,0 +1,18 @@
+=== ExecuteBuildSpec 'Application' [EXE] target 'My Computer' in Source\CI Tests.lvproj ===
+LabVIEWCLI started logging in file:  C:\Users\ContainerAdministrator\AppData\Local\Temp\lvtemporary_126532.log
+Using LabVIEW: "C:\Program Files\National Instruments\LabVIEW 2026\LabVIEW.exe"
+LabVIEW launched successfully.
+Connection established with LabVIEW at port number 3363.
+
+Operation output: 
+Generated files are:
+C:\workspace\CI Tests\builds\Application\Application.exe
+
+C:\workspace\CI Tests\builds\Application\Application.aliases
+
+C:\workspace\CI Tests\builds\Application\Application.ini
+
+
+ExecuteBuildSpec operation succeeded.
+
+
