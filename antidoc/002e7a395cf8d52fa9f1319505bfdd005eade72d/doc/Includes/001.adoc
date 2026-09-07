@@ -1,0 +1,36 @@
+== CI Tests Launcher.lvlib
+
+*Responsibility:*
+No description found (add content in lvlib description)
+
+*Version:* 1.0.0.0
+
+=== Functions
+
+.Functions (non private scope only)
+[cols="<.<4d,<.<8a,<.<12d,<.<1a,<.<1a,<.<1a", %autowidth, frame=all, grid=all, stripes=none]
+|===
+|Name |Connector pane |Description |S. |R. |I.
+
+|Splash Screen
+|image:CI_Tests_Launcher.lvlib_Splash_Screen.vi.png[CI Tests Launcher.lvlib:Splash Screen.vi]
+|This is the top-level VI of this application. When it runs, it behaves like the splash screen many applications use to keep the user occupied while the application loads into memory. This application is quite small, so there is little overhead, which would make the splash screen just flash for a moment. Because that flash is distracting, there is a three-second delay inserted into this VI so that it stays up for a little bit. 
+
+This VI uses a delay-loaded subVI call to load the rest of the application. This trick ensures that the splash screen can load instantly regardless of how large the rest of the VI hierarchy gets, and the loading of the rest of the VIs becomes one step in the load process.
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+|===
+
+**S**cope: image:scope-protected.png[] -> Protected | image:scope-community.png[] -> Community
+
+**R**eentrancy: image:reentrancy-preallocated.png[] -> Preallocated reentrancy | image:reentrancy-shared.png[] -> Shared reentrancy
+
+**I**nlining: image:inlined.png[] -> Inlined
+
+=== Library Constant VIs
+
+[NOTE]
+====
+No Constant VIs Found
+====

@@ -1,0 +1,66 @@
+== Log Event Msg.lvclass
+
+*Responsibility:*
+Message: <Any Actor> to this class
+
+This message sends some text to be added to the ongoing log file maintained by the application.
+
+*Version:* 1.0.0.0
+
+[plantuml, format="svg", align="center"]
+....
+@startuml
+set namespaceSeparator :
+skinparam ClassBackgroundColor #FFFFFF
+skinparam ClassBorderColor #555555
+skinparam ClassFontColor #000000
+skinparam ClassHeaderBackgroundColor #808080
+
+skinparam top to bottom direction
+class "CI Tests.lvlib:Log Event Msg" {
+{field} -Event Text : String
+{static} {method} +Send Log Event()
+{method} +Do()
+
+}
+"Actor Framework.lvlib:Message" <|-- "CI Tests.lvlib:Log Event Msg"
+
+
+
+@enduml
+....
+
+=== Methods
+
+.Functions (non private scope only)
+[cols="<.<4d,<.<8a,<.<12d,<.<1a,<.<1a,<.<1a", %autowidth, frame=all, grid=all, stripes=none]
+|===
+|Name |Connector pane |Description |S. |R. |I.
+
+|Send Log Event
+|image:CI_Tests.lvlib_Log_Event_Msg.lvclass_Send_Log_Event.vi.png[CI Tests.lvlib:Log Event Msg.lvclass:Send Log Event.vi]
+|No description found (add content in vi description)
+|image:empty.png[empty.png]
+|image:reentrancy-preallocated.png[reentrancy-preallocated.png]
+|image:inlined.png[inlined.png]
+
+|Do
+|image:CI_Tests.lvlib_Log_Event_Msg.lvclass_Do.vi.png[CI Tests.lvlib:Log Event Msg.lvclass:Do.vi]
+|No description found (add content in vi description)
+|image:empty.png[empty.png]
+|image:reentrancy-shared.png[reentrancy-shared.png]
+|image:empty.png[empty.png]
+|===
+
+**S**cope: image:scope-protected.png[] -> Protected | image:scope-community.png[] -> Community
+
+**R**eentrancy: image:reentrancy-preallocated.png[] -> Preallocated reentrancy | image:reentrancy-shared.png[] -> Shared reentrancy
+
+**I**nlining: image:inlined.png[] -> Inlined
+
+=== Class Constant VIs
+
+[NOTE]
+====
+No Constant VIs Found
+====

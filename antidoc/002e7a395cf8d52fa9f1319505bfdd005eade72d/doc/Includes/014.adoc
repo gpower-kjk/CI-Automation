@@ -1,0 +1,61 @@
+=== #CodeNeeded
+
+.#CodeNeeded
+[cols="<.<8d,<.<2d,<.<2d", %autowidth, frame=all, grid=all, stripes=none]
+|===
+|Text |VI |Owned by
+
+|#CodeNeeded - You will want to change this task to do something useful or remove this task entirely and add one or more new VIs that perform useful operations for your process. 
+|Task.vi
+|<<Beta.lvclass>>
+
+|#CodeNeeded - You will want to change this task to do something useful or remove this task entirely and add one or more new VIs that perform useful operations for your process. 
+|Task.vi
+|<<Alpha.lvclass>>
+
+|#CodeNeeded - If you spawn additional nested actors, you will need to send them Stop messages here. If you change your asynchronous loops to use a different stop mechanism, you will need to adjust this code accordingly.
+
+The other independent process in this example uses a different mechanism for its keep alive messages, and as such it does not need to override Stop Core.vi. If you change that mechanism or add nested children to it, you will need to add an override of Stop Core.vi in that class.  
+|Stop Core.vi
+|<<Alpha.lvclass>>
+
+|#CodeNeeded - This sample code is reading an integer from the configuration file. It is here only to give you an example. If you have other configuration settings that you wish to read, you should include them here (and update the private data control so you have a place to store those values). Remove the Integer example. Also, change the name of the config file to match your application's EXE name.
+|Read Config File.vi
+|<<CI Tests.lvclass>>
+
+|#CodeNeeded - You will possibly want to rewrite this entire block diagram. This is where you put the code for one of your two independent processes. This particular actor has been written as an example of an actor that can respond to various events and sends a "I am still alive" heartbeat message to the caller once per second. It uses a user event to communicate with the main actor loop, but you may find queues, notifiers or other  tools work better in some situations.
+|Actor Core.vi
+|<<Beta.lvclass>>
+
+|#CodeNeeded - You will likely want to rewrite this entire block diagram. This is where you put the code for one of your two independent processes. This particular actor has been written as an example of an actor that does the same action repeatedly on an interval unless interrupted by another message from the caller. 
+|Actor Core.vi
+|<<Alpha.lvclass>>
+|===
+
+=== #CodeRecommended
+
+.#CodeRecommended
+[cols="<.<8d,<.<2d,<.<2d", %autowidth, frame=all, grid=all, stripes=none]
+|===
+|Text |VI |Owned by
+
+|#CodeRecommended - If you decide to keep the event log, you probably want to add more sophistication to the scrolling behavior. Since such behaviors were not the intent of this project template, a minimal implementation is all that was provided here.
+|Log Event.vi
+|<<CI Tests.lvclass>>
+
+|#CodeRecommended - Update the translation table for any strings you will be displaying to your users.
+|Localization.vi
+|<<CI Tests.lvclass>>
+
+|#CodeRecommended - Update the translation table for any strings you will be displaying to your users.
+|Localization.vi
+|<<CI Tests Launcher.lvlib>>
+
+|#CodeRecommended - Update the translation table for any strings you will be displaying to your users.
+|Localization.vi
+|<<Beta.lvclass>>
+
+|#CodeRecommended - Update the translation table for any strings you will be displaying to your users.
+|Localization.vi
+|<<Alpha.lvclass>>
+|===

@@ -1,0 +1,91 @@
+== Beta.lvclass
+
+*Responsibility:*
+No description found (add content in lvclass description)
+
+*Version:* 1.0.0.0
+
+[plantuml, format="svg", align="center"]
+....
+@startuml
+set namespaceSeparator :
+skinparam ClassBackgroundColor #FFFFFF
+skinparam ClassBorderColor #555555
+skinparam ClassFontColor #000000
+skinparam ClassHeaderBackgroundColor #808080
+
+skinparam top to bottom direction
+class "Beta Actor.lvlib:Beta" {
+{field} -Stop Signal : NoType
+{static} {method} -Localization()
+{method} #Actor Core()
+{method} #Stop Core()
+{method} +Task()
+
+}
+"Actor Framework.lvlib:Actor" <|-- "Beta Actor.lvlib:Beta"
+
+
+
+@enduml
+....
+
+=== Methods
+
+.Functions (non private scope only)
+[cols="<.<4d,<.<8a,<.<12d,<.<1a,<.<1a,<.<1a", %autowidth, frame=all, grid=all, stripes=none]
+|===
+|Name |Connector pane |Description |S. |R. |I.
+
+|Actor Core
+|image:Beta_Actor.lvlib_Beta.lvclass_Actor_Core.vi.png[Beta Actor.lvlib:Beta.lvclass:Actor Core.vi]
+|This is Actor Core.vi, the main message handling loop for Actors. An actor usually just sits in this loop and processes messages as they arrive. Any error returned by the message Do.vi call will stop the loop, with error code 43 as the canonical signal to stop with no error sent to caller. Descendants  may override that in Handle Error.vi.
+|image:scope-protected.png[scope-protected.png]
+|image:reentrancy-shared.png[reentrancy-shared.png]
+|image:empty.png[empty.png]
+
+|Stop Core
+|image:Beta_Actor.lvlib_Beta.lvclass_Stop_Core.vi.png[Beta Actor.lvlib:Beta.lvclass:Stop Core.vi]
+|In override VIs of Stop Core.vi, an actor should invoke any code needed to stop all the parallel processes that it created during its run. This includes any nested actors that it created and any other asynchronously running VIs, such as a Time-Delayed Message. It may also include all parallel loops in its Actor Core, although it is acceptable to stop those using a local signal on the Actor Core block diagram that is raised after the Call Parent Class Method node finishes. 
+
+The **final error code** input tells the actor what error was set when this actor quit. Zero means there was no error. You can use this to decide whether this should be treated as a Normal Stop or an Emergency Stop for the purposes of signaling other actors. In general, any non-zero value should be treated as an Emergency Stop, though a given actor is free to choose other policies. Note that the particular error code 1608 indicates that this actor was itself stopped by an Emergency Stop and should pass that along.
+|image:scope-protected.png[scope-protected.png]
+|image:reentrancy-shared.png[reentrancy-shared.png]
+|image:empty.png[empty.png]
+
+|Task
+|image:Beta_Actor.lvlib_Beta.lvclass_Task.vi.png[Beta Actor.lvlib:Beta.lvclass:Task.vi]
+|No description found (add content in vi description)
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+|===
+
+**S**cope: image:scope-protected.png[] -> Protected | image:scope-community.png[] -> Community
+
+**R**eentrancy: image:reentrancy-preallocated.png[] -> Preallocated reentrancy | image:reentrancy-shared.png[] -> Shared reentrancy
+
+**I**nlining: image:inlined.png[] -> Inlined
+
+=== Class Constant VIs
+
+[NOTE]
+====
+No Constant VIs Found
+====
+
+=== Bookmarks
+
+==== #CodeNeeded
+
+.#CodeNeeded
+[cols="<.<8d,<.<2d", %autowidth, frame=all, grid=all, stripes=none]
+|===
+|Text |VI
+
+|#CodeNeeded - You will want to change this task to do something useful or remove this task entirely and add one or more new VIs that perform useful operations for your process. 
+|Task.vi
+
+|#CodeNeeded - You will possibly want to rewrite this entire block diagram. This is where you put the code for one of your two independent processes. This particular actor has been written as an example of an actor that can respond to various events and sends a "I am still alive" heartbeat message to the caller once per second. It uses a user event to communicate with the main actor loop, but you may find queues, notifiers or other  tools work better in some situations.
+|Actor Core.vi
+|===

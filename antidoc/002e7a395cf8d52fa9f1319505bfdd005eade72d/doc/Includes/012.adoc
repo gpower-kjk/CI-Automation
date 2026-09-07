@@ -1,0 +1,94 @@
+== Alpha.lvclass
+
+*Responsibility:*
+No description found (add content in lvclass description)
+
+*Version:* 1.0.0.0
+
+[plantuml, format="svg", align="center"]
+....
+@startuml
+set namespaceSeparator :
+skinparam ClassBackgroundColor #FFFFFF
+skinparam ClassBorderColor #555555
+skinparam ClassFontColor #000000
+skinparam ClassHeaderBackgroundColor #808080
+
+skinparam top to bottom direction
+class "Alpha Actor.lvlib:Alpha" {
+{field} -Timed Delivery Notifier : NoType
+{static} {method} -Localization()
+{method} #Actor Core()
+{method} #Stop Core()
+{method} +Task()
+
+}
+"Actor Framework.lvlib:Actor" <|-- "Alpha Actor.lvlib:Alpha"
+
+
+
+@enduml
+....
+
+=== Methods
+
+.Functions (non private scope only)
+[cols="<.<4d,<.<8a,<.<12d,<.<1a,<.<1a,<.<1a", %autowidth, frame=all, grid=all, stripes=none]
+|===
+|Name |Connector pane |Description |S. |R. |I.
+
+|Actor Core
+|image:Alpha_Actor.lvlib_Alpha.lvclass_Actor_Core.vi.png[Alpha Actor.lvlib:Alpha.lvclass:Actor Core.vi]
+|This is Actor Core.vi, the main message handling loop for Actors. An actor usually just sits in this loop and processes messages as they arrive. Any error returned by the message Do.vi call will stop the loop, with error code 43 as the canonical signal to stop with no error sent to caller. Descendants  may override that in Handle Error.vi.
+|image:scope-protected.png[scope-protected.png]
+|image:reentrancy-shared.png[reentrancy-shared.png]
+|image:empty.png[empty.png]
+
+|Stop Core
+|image:Alpha_Actor.lvlib_Alpha.lvclass_Stop_Core.vi.png[Alpha Actor.lvlib:Alpha.lvclass:Stop Core.vi]
+|No description found (add content in vi description)
+|image:scope-protected.png[scope-protected.png]
+|image:reentrancy-shared.png[reentrancy-shared.png]
+|image:empty.png[empty.png]
+
+|Task
+|image:Alpha_Actor.lvlib_Alpha.lvclass_Task.vi.png[Alpha Actor.lvlib:Alpha.lvclass:Task.vi]
+|No description found (add content in vi description)
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+|===
+
+**S**cope: image:scope-protected.png[] -> Protected | image:scope-community.png[] -> Community
+
+**R**eentrancy: image:reentrancy-preallocated.png[] -> Preallocated reentrancy | image:reentrancy-shared.png[] -> Shared reentrancy
+
+**I**nlining: image:inlined.png[] -> Inlined
+
+=== Class Constant VIs
+
+[NOTE]
+====
+No Constant VIs Found
+====
+
+=== Bookmarks
+
+==== #CodeNeeded
+
+.#CodeNeeded
+[cols="<.<8d,<.<2d", %autowidth, frame=all, grid=all, stripes=none]
+|===
+|Text |VI
+
+|#CodeNeeded - You will want to change this task to do something useful or remove this task entirely and add one or more new VIs that perform useful operations for your process. 
+|Task.vi
+
+|#CodeNeeded - If you spawn additional nested actors, you will need to send them Stop messages here. If you change your asynchronous loops to use a different stop mechanism, you will need to adjust this code accordingly.
+
+The other independent process in this example uses a different mechanism for its keep alive messages, and as such it does not need to override Stop Core.vi. If you change that mechanism or add nested children to it, you will need to add an override of Stop Core.vi in that class.  
+|Stop Core.vi
+
+|#CodeNeeded - You will likely want to rewrite this entire block diagram. This is where you put the code for one of your two independent processes. This particular actor has been written as an example of an actor that does the same action repeatedly on an interval unless interrupted by another message from the caller. 
+|Actor Core.vi
+|===

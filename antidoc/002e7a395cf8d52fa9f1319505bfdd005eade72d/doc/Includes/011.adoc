@@ -1,0 +1,108 @@
+== CI Tests.lvclass
+
+*Responsibility:*
+No description found (add content in lvclass description)
+
+*Version:* 1.0.0.0
+
+[plantuml, format="svg", align="center"]
+....
+@startuml
+set namespaceSeparator :
+skinparam ClassBackgroundColor #FFFFFF
+skinparam ClassBorderColor #555555
+skinparam ClassFontColor #000000
+skinparam ClassHeaderBackgroundColor #808080
+
+skinparam top to bottom direction
+class "CI Tests.lvlib:CI Tests" {
+{field} -Configuration Settings : Cluster
+{field} -Alpha Queue : LV Class
+{field} -Beta Queue : LV Class
+{field} -Event Log Reference : kLVObjString
+{static} {method} -Localization()
+{static} {method} +Log Event()
+{static} {method} +Load App()
+{method} #Actor Core()
+
+}
+"Actor Framework.lvlib:Actor" <|-- "CI Tests.lvlib:CI Tests"
+"CI Tests.lvlib:CI Tests" *-- "Actor Framework.lvlib:Message Enqueuer"
+
+
+
+@enduml
+....
+
+=== Methods
+
+.Functions (non private scope only)
+[cols="<.<4d,<.<8a,<.<12d,<.<1a,<.<1a,<.<1a", %autowidth, frame=all, grid=all, stripes=none]
+|===
+|Name |Connector pane |Description |S. |R. |I.
+
+|Actor Core
+|image:CI_Tests.lvlib_CI_Tests.lvclass_Actor_Core.vi.png[CI Tests.lvlib:CI Tests.lvclass:Actor Core.vi]
+|This is Actor Core.vi, the main message handling loop for Actors. An actor usually just sits in this loop and processes messages as they arrive. Any error returned by the message Do.vi call will stop the loop, with error code 43 as the canonical signal to stop with no error sent to caller. Descendants  may override that in Handle Error.vi.
+|image:scope-protected.png[scope-protected.png]
+|image:reentrancy-shared.png[reentrancy-shared.png]
+|image:empty.png[empty.png]
+
+|Read Config File
+|image:CI_Tests.lvlib_CI_Tests.lvclass_Read_Config_File.vi.png[CI Tests.lvlib:CI Tests.lvclass:Read Config File.vi]
+|Read the configuration file (if it exists) for values that will control this run of the application.
+|image:scope-protected.png[scope-protected.png]
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+
+|Log Event
+|image:CI_Tests.lvlib_CI_Tests.lvclass_Log_Event.vi.png[CI Tests.lvlib:CI Tests.lvclass:Log Event.vi]
+|Add text to the ongoing event log.
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+
+|Load App
+|image:CI_Tests.lvlib_CI_Tests.lvclass_Load_App.vi.png[CI Tests.lvlib:CI Tests.lvclass:Load App.vi]
+|Load the application into memory and start it running. The input notifier is used to send text to the splash screen to tell the user what stage the load process is in.
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+|===
+
+**S**cope: image:scope-protected.png[] -> Protected | image:scope-community.png[] -> Community
+
+**R**eentrancy: image:reentrancy-preallocated.png[] -> Preallocated reentrancy | image:reentrancy-shared.png[] -> Shared reentrancy
+
+**I**nlining: image:inlined.png[] -> Inlined
+
+=== Class Constant VIs
+
+[NOTE]
+====
+No Constant VIs Found
+====
+
+=== Bookmarks
+
+==== #CodeNeeded
+
+.#CodeNeeded
+[cols="<.<8d,<.<2d", %autowidth, frame=all, grid=all, stripes=none]
+|===
+|Text |VI
+
+|#CodeNeeded - This sample code is reading an integer from the configuration file. It is here only to give you an example. If you have other configuration settings that you wish to read, you should include them here (and update the private data control so you have a place to store those values). Remove the Integer example. Also, change the name of the config file to match your application's EXE name.
+|Read Config File.vi
+|===
+
+==== #CodeRecommended
+
+.#CodeRecommended
+[cols="<.<8d,<.<2d", %autowidth, frame=all, grid=all, stripes=none]
+|===
+|Text |VI
+
+|#CodeRecommended - If you decide to keep the event log, you probably want to add more sophistication to the scrolling behavior. Since such behaviors were not the intent of this project template, a minimal implementation is all that was provided here.
+|Log Event.vi
+|===

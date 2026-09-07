@@ -1,0 +1,72 @@
+== Alpha Task Msg.lvclass
+
+*Responsibility:*
+
+
+
+*Version:* 1.0.0.0
+
+[plantuml, format="svg", align="center"]
+....
+@startuml
+set namespaceSeparator :
+skinparam ClassBackgroundColor #FFFFFF
+skinparam ClassBorderColor #555555
+skinparam ClassFontColor #000000
+skinparam ClassHeaderBackgroundColor #808080
+
+skinparam top to bottom direction
+class "Alpha Actor.lvlib:Alpha Task Msg" {
+{field} +Data : I32
+{static} {method} +Send Alpha Task()
+{method} +Do()
+
+}
+"Actor Framework.lvlib:Message" <|-- "Alpha Actor.lvlib:Alpha Task Msg"
+
+
+
+@enduml
+....
+
+=== Methods
+
+.Functions (non private scope only)
+[cols="<.<4d,<.<8a,<.<12d,<.<1a,<.<1a,<.<1a", %autowidth, frame=all, grid=all, stripes=none]
+|===
+|Name |Connector pane |Description |S. |R. |I.
+
+|Send Alpha Task
+|image:Alpha_Actor.lvlib_Alpha_Task_Msg.lvclass_Send_Alpha_Task.vi.png[Alpha Actor.lvlib:Alpha Task Msg.lvclass:Send Alpha Task.vi]
+|No description found (add content in vi description)
+|image:empty.png[empty.png]
+|image:reentrancy-preallocated.png[reentrancy-preallocated.png]
+|image:inlined.png[inlined.png]
+
+|Do
+|image:Alpha_Actor.lvlib_Alpha_Task_Msg.lvclass_Do.vi.png[Alpha Actor.lvlib:Alpha Task Msg.lvclass:Do.vi]
+|No description found (add content in vi description)
+|image:empty.png[empty.png]
+|image:reentrancy-shared.png[reentrancy-shared.png]
+|image:empty.png[empty.png]
+
+|Write Data
+|image:Alpha_Actor.lvlib_Alpha_Task_Msg.lvclass_Write_Data.vi.png[Alpha Actor.lvlib:Alpha Task Msg.lvclass:Write Data.vi]
+|No description found (add content in vi description)
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+|image:empty.png[empty.png]
+|===
+
+**S**cope: image:scope-protected.png[] -> Protected | image:scope-community.png[] -> Community
+
+**R**eentrancy: image:reentrancy-preallocated.png[] -> Preallocated reentrancy | image:reentrancy-shared.png[] -> Shared reentrancy
+
+**I**nlining: image:inlined.png[] -> Inlined
+
+=== Class Constant VIs
+
+[NOTE]
+====
+No Constant VIs Found
+====
