@@ -1,8 +1,17 @@
 {
   "schema": 1,
   "repo": "gpower-kjk/CI-Automation",
-  "sha": "5a5dbcbd00c036cd9c27b25de68cb1a96a2687c3",
+  "sha": "002e7a395cf8d52fa9f1319505bfdd005eade72d",
   "revisions": [
+    {
+      "sha": "002e7a395cf8d52fa9f1319505bfdd005eade72d",
+      "short": "002e7a3",
+      "message": "Add NI-Actor template project to have some code to test on",
+      "author": "K\u00e5re Kirkegaard",
+      "date": "2026-09-07T13:39:26Z",
+      "project": true,
+      "dep_only": false
+    },
     {
       "sha": "5a5dbcbd00c036cd9c27b25de68cb1a96a2687c3",
       "short": "5a5dbcb",
