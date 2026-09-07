@@ -1,0 +1,125 @@
+{
+  "meta": {
+    "sha": "002e7a395cf8d52fa9f1319505bfdd005eade72d",
+    "short": "002e7a3",
+    "platform": "windows",
+    "repo": "gpower-kjk/CI-Automation",
+    "pages_url": "https://gpower-kjk.github.io/CI-Automation",
+    "pages_base": "../..",
+    "commit": {
+      "message": "Add NI-Actor template project to have some code to test on",
+      "author": "Kåre Kirkegaard",
+      "date": "2026-09-07T15:39:26+02:00"
+    },
+    "generated_utc": "2026-09-07 14:07 UTC",
+    "analysis_date": "Monday, September 7, 2026 2:07:35 PM",
+    "duration": "00:01:43.15"
+  },
+  "summary": {
+    "vis_analyzed": 40,
+    "tests_run": 4160,
+    "passed": 3962,
+    "failed": 198,
+    "skipped": 0,
+    "findings": 89,
+    "vis_with_findings": 22
+  },
+  "errors": {
+    "vi_not_loadable": 0,
+    "test_not_loadable": 0,
+    "test_not_runnable": 0,
+    "test_error_out": 0
+  },
+  "rule_counts": [
+    {
+      "test": "Enabled Debugging",
+      "severity": "performance",
+      "count": 19,
+      "vi_count": 19
+    },
+    {
+      "test": "Error Cluster Wired",
+      "severity": "correctness",
+      "count": 11,
+      "vi_count": 7
+    },
+    {
+      "test": "Reentrant VI Issues",
+      "severity": "correctness",
+      "count": 10,
+      "vi_count": 6
+    },
+    {
+      "test": "VI Documentation",
+      "severity": "documentation",
+      "count": 10,
+      "vi_count": 10
+    },
+    {
+      "test": "Wire Bends",
+      "severity": "style",
+      "count": 9,
+      "vi_count": 7
+    },
+    {
+      "test": "Approved Bookmark Tags",
+      "severity": "style",
+      "count": 6,
+      "vi_count": 6
+    },
+    {
+      "test": "Comment Usage",
+      "severity": "documentation",
+      "count": 5,
+      "vi_count": 5
+    },
+    {
+      "test": "Dialog Controls",
+      "severity": "style",
+      "count": 5,
+      "vi_count": 1
+    },
+    {
+      "test": "Tunnel Position",
+      "severity": "style",
+      "count": 4,
+      "vi_count": 2
+    },
+    {
+      "test": "Diagram Size",
+      "severity": "style",
+      "count": 3,
+      "vi_count": 3
+    },
+    {
+      "test": "Control Alignment",
+      "severity": "style",
+      "count": 2,
+      "vi_count": 2
+    },
+    {
+      "test": "Wires Under Objects",
+      "severity": "style",
+      "count": 2,
+      "vi_count": 2
+    },
+    {
+      "test": "Auto Error Handling Enabled",
+      "severity": "correctness",
+      "count": 1,
+      "vi_count": 1
+    },
+    {
+      "test": "Panel Size and Position",
+      "severity": "style",
+      "count": 1,
+      "vi_count": 1
+    },
+    {
+      "test": "Value Property Usage",
+      "severity": "performance",
+      "count": 1,
+      "vi_count": 1
+    }
+  ]
+}
