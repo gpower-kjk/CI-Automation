@@ -1,8 +1,17 @@
 {
   "schema": 1,
   "repo": "gpower-kjk/CI-Automation",
-  "sha": "41936ee617c8fc2375a92abb35bf8a2eef8f292d",
+  "sha": "970552fffbc929565d4f7d2ba4c70a0ab01dd012",
   "revisions": [
+    {
+      "sha": "970552fffbc929565d4f7d2ba4c70a0ab01dd012",
+      "short": "970552f",
+      "message": "Change OS support to Linux only in CI config",
+      "author": "K\u00e5re Juul Kirkegaard",
+      "date": "2026-09-07T14:12:35Z",
+      "project": false,
+      "dep_only": false
+    },
     {
       "sha": "41936ee617c8fc2375a92abb35bf8a2eef8f292d",
       "short": "41936ee",
