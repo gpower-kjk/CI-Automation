@@ -21,9 +21,3 @@ activities:
   - vi-analyzer
   - vidiff
   - snapshots
-  - custom-image
-  - snapshots-2
-  - unit-tests
-  - builds
-  - sbom-generation
-  - antidoc
