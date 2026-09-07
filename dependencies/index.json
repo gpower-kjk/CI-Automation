@@ -1,8 +1,17 @@
 {
   "schema": 1,
   "repo": "gpower-kjk/CI-Automation",
-  "sha": "970552fffbc929565d4f7d2ba4c70a0ab01dd012",
+  "sha": "bdaacfdd39f88b45f23c1d5660bf234523722a36",
   "revisions": [
+    {
+      "sha": "bdaacfdd39f88b45f23c1d5660bf234523722a36",
+      "short": "bdaacfd",
+      "message": "remove hourly update of the dashboard",
+      "author": "K\u00e5re Kirkegaard",
+      "date": "2026-09-07T14:37:26Z",
+      "project": false,
+      "dep_only": false
+    },
     {
       "sha": "970552fffbc929565d4f7d2ba4c70a0ab01dd012",
       "short": "970552f",
