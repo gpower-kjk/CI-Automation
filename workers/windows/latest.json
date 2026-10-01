@@ -1,7 +1,7 @@
 {
-  "version": "win-c6221662a861",
+  "version": "win-474fc16515c3",
   "platform": "windows",
-  "manifest_url": "https://gpower-kjk.github.io/CI-Automation/workers/windows/win-c6221662a861/manifest.html",
-  "build_date": "2026-09-07T14:12:48Z",
-  "git_sha": "970552fffbc929565d4f7d2ba4c70a0ab01dd012"
+  "manifest_url": "https://gpower-kjk.github.io/CI-Automation/workers/windows/win-474fc16515c3/manifest.html",
+  "build_date": "2026-10-01T11:56:48Z",
+  "git_sha": "bdaacfdd39f88b45f23c1d5660bf234523722a36"
 }
